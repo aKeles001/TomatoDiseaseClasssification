@@ -14,7 +14,7 @@ class_names = [
 image_size = (224, 224)
 
 # Load the model
-model = load_model('/workspaces/TomatoDiseaseClasssification/model/model.h5')
+model = load_model('model/model.h5')
 
 # Prediction function
 def predict_image(img: Image.Image, model, class_names, image_size):
