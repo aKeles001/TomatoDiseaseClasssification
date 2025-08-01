@@ -8,8 +8,8 @@ st.title("Bell Pepper Leaf Disease Classification")
 
 # Define class names and image size
 class_names = [
-    'Healthy',
-    'Bacterial Spot'
+    'Bacterial Spot',
+    'Healthy'
 ]
 image_size = (224, 224)
 
@@ -19,15 +19,20 @@ model = load_model('model/model_BellPepper.h5')
 # Prediction function
 def predict_image(img: Image.Image, model, class_names, image_size):
     """Preprocesses and predicts class of image using model"""
-    image_resized = image1.resize(image_size)
+    image_resized = img.resize(image_size) # Use img instead of image1
     image_array = np.array(image_resized)
     image_array = preprocess_input(image_array)
     image_array = np.expand_dims(image_array, axis=0)
 
-    prediction = model.predict(image_array)[0]
-    predicted_index = np.argmax(prediction)
-    predicted_label = class_names[predicted_index]
-    confidence = prediction[predicted_index] * 100
+    prediction = model.predict(image_array)[0][0] # Get the single output value
+
+    # For binary classification with sigmoid output
+    if prediction >= 0.5:
+        predicted_label = class_names[1] # Bacterial Spot
+        confidence = prediction * 100
+    else:
+        predicted_label = class_names[0] # Healthy
+        confidence = (1 - prediction) * 100 # Confidence for the Healthy class
 
     return predicted_label, confidence
 
