@@ -22,8 +22,8 @@ Welcome to the **Plant Leaf Disease Classifier** app! This tool uses a trained d
 ---
 
 ### 📸 How to Use:
-1. Go to the **"Disease Detector"** page using the sidebar.
-2. Upload a plant leaf image (JPG/PNG).
+1. Go to the **"Plant of Your Chosing"**  using the sidebar.
+2. Upload a plant leaf image (JPG).
 3. Click **"Classify"** to see the result.
 4. Review the prediction and suggested label.
 
