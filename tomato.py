@@ -8,13 +8,17 @@ st.title("Tomato Leaf Disease Classification")
 
 # Define class names and image size
 class_names = [
-    'Bacterial Spot', 'Early Blight', 'Healthy',
-    'Late Blight', 'Septoria Leaf Spot', 'Yellow Leaf Curl Virus'
+    'Bacterial Spot', 
+    'Early Blight', 
+    'Healthy',
+    'Late Blight', 
+    'Septoria Leaf Spot', 
+    'Yellow Leaf Curl Virus'
 ]
 image_size = (224, 224)
 
 # Load the model
-model = load_model('model/model.h5')
+model = load_model('model/model_Tomato.h5')
 
 # Prediction function
 def predict_image(img: Image.Image, model, class_names, image_size):

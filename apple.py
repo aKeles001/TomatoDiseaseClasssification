@@ -8,13 +8,15 @@ st.title("Apple Leaf Disease Classification")
 
 # Define class names and image size
 class_names = [
-    'Apple Scab', 'Black Rot', 'Cedar Apple Rust',
+    'Apple Scab', 
+    'Black Rot', 
+    'Cedar Apple Rust',
     'Healthy'
 ]
 image_size = (224, 224)
 
 # Load the model
-model = load_model('model/model_apple.h5')
+model = load_model('model/model_Apple.h5')
 
 # Prediction function
 def predict_image(img: Image.Image, model, class_names, image_size):
